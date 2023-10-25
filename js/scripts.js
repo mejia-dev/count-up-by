@@ -1,6 +1,6 @@
 // Business Logic
 function isEmpty(testValue) {
-  return (testValue === 0 || testValue === null);
+  return (testValue === 0 || testValue === NaN);
 }
 
 
@@ -8,7 +8,7 @@ function countUpBy() {
   event.preventDefault();
   const countTo = parseInt(document.getElementById("countTo").value);
   const countBy = parseInt(document.getElementById("countBy").value);
-  if (isEmpty(countTo) || isEmpty(countBy)) {
+  if (isEmpty(countTo) || isEmpty(countBy) || countBy > countTo) {
       printResult("input a different number");
   } else {
     let result = 0;
